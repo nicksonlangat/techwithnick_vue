@@ -4,7 +4,7 @@
       <p class="ml-6 text-white mt-4 font-base">When I am free I like to rebuild some of the popular platforms that I admire :)</p>
       <div class="grid grid-cols-3 ml-6 mt-6 gap-x-8">
         <div class="bg-[#18181b] pb-2">
-          <img class="rounded-lg" src="../assets/Screenshot 2023-04-14 at 14.10.40.png" alt="">
+          <img class="rounded-lg" src="" alt="">
           <div>
             <h3 class=" font-base text-white mt-2 ml-2">Spotify Clone</h3>
           <p class=" font-base text-white mt-2 ml-2">Hobby project for the popular music platform.</p>
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="bg-[#18181b] pb-2">
-          <img class="rounded-lg" src="../assets/Screenshot 2023-04-14 at 14.11.41.png" alt="">
+          <img class="rounded-lg" src="" alt="">
           <div>
             <h3 class=" font-base text-white mt-2 ml-2">Microsoft Clone</h3>
           <p class=" font-base text-white mt-2 ml-2">Hobby project for the tech giant.</p>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="bg-[#18181b] pb-2">
-          <img class="rounded-lg" src="../assets/Screenshot 2023-04-14 at 14.11.07.png" alt="">
+          <img class="rounded-lg" src="" alt="">
           <div>
             <h3 class=" font-base text-white mt-2 ml-2">Epic Games Clone</h3>
           <p class=" font-base text-white mt-2 ml-2">Hobby project for the popular game platform.</p>
