@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Jost');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.intro {
+    -webkit-text-fill-color: transparent;
+          background: -webkit-gradient(linear, left top, left bottom, from(#daccd1), to(#433a42));
+          background: -o-gradient(linear, left top, left bottom, from(#a69c9f), to(#3c333b));
+    -webkit-background-clip: text;
+}
+
+html{
+    background-color: #0F172A;
+}
