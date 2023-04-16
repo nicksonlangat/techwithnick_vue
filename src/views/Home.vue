@@ -12,10 +12,10 @@
     </div>
 
     
-    <Projects class="pt-12" />
-    <Clones class="pt-16"/>
-    <Articles class="pt-16" />
-    <Contact class="pt-16" />
+    <Projects id="projects" class="pt-12" />
+    <Clones id="clones" class="pt-16"/>
+    <Articles id="articles" class="pt-16" />
+    <Contact id="contact" class="pt-16" />
     
     
   </div>

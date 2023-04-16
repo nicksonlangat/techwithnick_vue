@@ -9,7 +9,7 @@
             {{ article.description }}
           </p>
           <div class="flex  py-2 justify-center">
-             <a :href="article.canonical_url" class="mt-8 mr-2 border border-white rounded-full px-8 py-2 text-white hover:bg-white hover:text-[#0F172A] duration-300 transition-colors">Read More</a>
+             <a target="_blank" :href="article.canonical_url" class="mt-8 mr-2 border border-white rounded-full px-8 py-2 text-white hover:bg-white hover:text-[#0F172A] duration-300 transition-colors">Read More</a>
           </div>
         </div>
       </div>

@@ -16,7 +16,19 @@ export default new Vuex.Store({
   async fetchProjects({commit}, { cb }) {
   try {
     const response = await Api()
-      .get('/api/projects/')
+      .get('/api/projects/?is_clone=false')
+    if (cb) {
+      cb(response.data.results)
+    }
+  } catch (error) {
+    return await Promise.reject(error)
+  }
+},
+
+async fetchCloneProjects({commit}, { cb }) {
+  try {
+    const response = await Api()
+      .get('/api/projects/?is_clone=true')
     if (cb) {
       cb(response.data.results)
     }
