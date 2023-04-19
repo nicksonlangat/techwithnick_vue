@@ -7,7 +7,7 @@ export default (content_type = 'application/json') => {
     }
     
     const Api = axios.create({
-        baseURL: "http://old.techwithnick.com/",
+        baseURL: "https://old.techwithnick.com/",
         withCredentials: false,
         headers: headers,
     })
