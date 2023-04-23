@@ -1,7 +1,7 @@
 <template>
    <div class="mt-4 container mx-auto">
       
-    <div>
+    <div class="ml-4">
       <h3 class="text-white text-4xl font-bold uppercase font-base">clones</h3>
       <p class="text-white mt-4 font-base">
         When I am free I like to rebuild some of the popular platforms that I admire :)
@@ -9,7 +9,7 @@
       
     </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-6 gap-x-8 gap-y-8">
+      <div class="grid ml-4 mr-4 grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-6 gap-x-8 gap-y-8">
         <div v-for="project of projects" :key="project.id" class="bg-[#18181b] pb-2">
           <img class="rounded-lg" :src="project.image" alt="">
           <div>
