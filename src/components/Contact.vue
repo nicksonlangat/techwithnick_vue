@@ -1,8 +1,8 @@
 <template>
     <div class="container pb-16 mx-auto">
-        <div class="">
-      <h3 class="text-white  text-center text-4xl font-bold uppercase font-base">find me on</h3>
-      <div class="flex items-center justify-center mt-4 gap-12">
+      <div>
+      <h3 class="text-white text-center text-4xl font-bold uppercase font-base">find me on</h3>
+      <div class="mt-4 grid grid-cols-4 lg:grid-cols-6 gap-y-4">
        <a href="https://github.com/nicksonlangat" target="_blank">
         <img class="h-20" src="../assets/iconmonstr-github-3.svg" alt="">
        </a>
@@ -22,6 +22,6 @@
         <img class="h-20" src="../assets/iconmonstr-facebook-3.svg" alt="">
        </a>
       </div>
-        </div>
+      </div>
     </div>
 </template>

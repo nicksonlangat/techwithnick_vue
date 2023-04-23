@@ -1,8 +1,8 @@
 <template>
     <div class="container mx-auto mt-8">
-      <h3 class="text-white text-4xl ml-6 font-bold uppercase font-base">articles</h3>
-      <p class="ml-6 text-white mt-4 font-base">No better way to give back to the tech community than by passing down what I have learnt in my journey so far. Enjoy!</p>
-      <div class="grid grid-cols-2 ml-6 mt-6 gap-x-8 gap-y-6">
+      <h3 class="text-white text-4xl font-bold uppercase font-base">articles</h3>
+      <p class="text-white mt-4 font-base">No better way to give back to the tech community than by passing down what I have learnt in my journey so far. Enjoy!</p>
+      <div class="grid grid-cols-1  lg:grid-cols-2 mt-6 gap-x-8 gap-y-6">
         <div v-for="article of articles" :key="article.id" class="bg-[#18181b] pb-2">
             <h3 class="font-base font-bold text-blue-300 mt-2 ml-2">{{ article.title }}</h3>
           <p class=" font-base text-white text-xs mt-4 ml-2">
