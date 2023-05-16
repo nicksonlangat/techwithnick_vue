@@ -28,7 +28,7 @@ export default new Vuex.Store({
 async fetchCloneProjects({commit}, { cb }) {
   try {
     const response = await Api()
-      .get('/api/projects/?is_clone=true')
+      .get('/api/projects/')
     if (cb) {
       cb(response.data.results)
     }
