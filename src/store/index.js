@@ -48,6 +48,57 @@ async fetchArticles({commit}, { cb }) {
     return await Promise.reject(error)
   }
 },
+async fetchMessages({commit}, { cb }) {
+  try {
+    const response = await Api()
+      .get('/api/messages/')
+    if (cb) {
+      cb(response.data.results)
+    }
+  } catch (error) {
+    return await Promise.reject(error)
+  }
+},
+async fetchNotifications({commit}, { read, cb }) {
+  let url = '/api/notifications/'
+
+  if (read != undefined) {
+    url = `/api/notifications/?is_read=${read}`
+  }
+
+  try {
+    const response = await Api()
+      .get(url)
+    if (cb) {
+      cb(response.data.results)
+    }
+  } catch (error) {
+    return await Promise.reject(error)
+  }
+},
+async markRead({commit}, {id, data, cb }) {
+  let url = `/api/notifications/${id}/`
+  try {
+    const response = await Api()
+      .patch(url, data)
+    if (cb) {
+      cb(response.data.results)
+    }
+  } catch (error) {
+    return await Promise.reject(error)
+  }
+},
+async createMessage({commit}, { data, cb }) {
+  try {
+    const response = await Api()
+      .post('/api/messages/', data)
+    if (cb) {
+      cb(response.data)
+    }
+  } catch (error) {
+    return await Promise.reject(error)
+  }
+},
   },
   modules: {
   }

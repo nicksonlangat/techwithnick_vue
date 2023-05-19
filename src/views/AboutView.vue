@@ -1,35 +1,12 @@
 <template>
-    <div>
-
-        <nav class="container fixed inset-x-0 z-20 top-4 flex font-base justify-between left-0 bg-[#14171a] w-1/2 mx-auto py-3 rounded-full">
-            <h3 class="ml-8 name cursor-pointer hover:text-white text-2xl font-bold">Nick</h3>
-            <ul class="mx-auto flex gap-6 text-[#878787]">
-
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#resume">Resume</a>
-                </li>
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#projects">Projects</a>
-                </li>
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#contact">Contact</a>
-                </li>
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#articles">Blog</a>
-                </li>
-
-            </ul>
-            <button @click="goToContact" class="mr-8 transition-opacity duration-300 ease-in hover:opacity-70 contact-btn cursor-pointer px-4 rounded-full text-white py-1">
-                Let's talk
-            </button>
-        </nav>
-
-        <div class="container mx-auto mt-28 pb-4">
-            <div class="flex justify-between gap-6">
-                <div class="bg-[#14171a] pb-4 w-1/2 rounded-2xl">
+     <div class="container mx-auto">
+        <Navigation/>
+        <div :class="[isOpen ? 'mt-40' : 'mt-28']" class="container mx-auto pb-4">
+            <div class="mx-4 lg:mx-0 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-[#14171a] pb-4  rounded-md">
                     <div class="flex justify-between mt-6 ml-8">
-                        <img class="h-32 w-32 rounded-full object-cover" src="../assets/WhatsApp Image 2023-05-15 at 19.53.22.jpeg" alt="">
-                        <div class="grid font-base grid-cols-2 cursor-pointer">
+                        <img class="h-32 w-32 mt-3 lg:mt-0 rounded-full object-cover" src="../assets/WhatsApp Image 2023-05-15 at 19.53.22.jpeg" alt="">
+                        <div class="grid font-base lg:grid-cols-2 gap-y-4 lg:gap-y-0 cursor-pointer">
                             <button class="mr-8 text-[#878787] transition-all duration-300 uppercase bg-[#1b1c1d] cursor-pointer h-10 rounded-full hover:text-white py-1">
                                 backend
                             </button>
@@ -39,20 +16,20 @@
                             <button class="mr-8 text-[#878787] transition-all duration-300 uppercase bg-[#1b1c1d] cursor-pointer h-10 rounded-full hover:text-white py-1">
                                devops
                             </button>
-                            <button class="mr-8 text-[#878787] transition-all duration-300 uppercase bg-[#1b1c1d] cursor-pointer h-10 rounded-full hover:text-white py-1">
+                            <button class="mr-8 invisible lg:visible text-[#878787] transition-all duration-300 uppercase bg-[#1b1c1d] cursor-pointer h-10 rounded-full hover:text-white py-1">
                                gamer
                             </button>
                         </div>
                     </div>
-                    <div class="flex mt-12 ml-8">
+                    <div class="flex -mt-16 lg:mt-12 ml-8">
                         <div>
                             <h1 class="font-base text-[#8c8c8c] font-bold text-3xl"><span class="text-white">Hello</span>, I am <br> Nick Langat</h1>
                             <p class="font-base mt-6 mr-4 text-[#878787]">Full-stack software engineer. I help startups design, build & deploy systems that scale. I also mentor & tutor junior devs and I give back to the tech community through writing. I code in Python, Go and JavaScript.</p>
                         </div>
                     </div>
                 </div>
-                <div class="transition-opacity duration-300 ease-in hover:opacity-100 contact-btn w-1/2 rounded-2xl">
-                    <div class="mt-6 ml-8 grid grid-cols-5 gap-y-4">
+                <div class="transition-opacity duration-300 ease-in hover:opacity-100 contact-btn rounded-md">
+                    <div class="mt-6 ml-8 grid grid-cols-3 lg:grid-cols-5 gap-y-4">
                         <span>
                             <svg class="h-16 w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><g fill-rule="evenodd" clip-rule="evenodd"><path fill="#386f9f" d="M51.834 23.017c3.756 0 7.512.058 11.263-.04.995-.026 2.78.797 2.7-1.271-.061-1.683-1.622-1.074-2.568-1.089-4.237-.067-8.488-.228-12.708.037-3.003.187-3.888-.953-3.511-3.707.13-.95.005-1.934.025-2.902.132-6.446 1.69-8.64 7.942-10.23 6.888-1.75 13.937-1.692 20.806-.184 6.175 1.356 8.74 6.16 8.428 10.604-.38 5.423-.086 10.893-.091 16.343-.009 6.853-3.55 10.49-10.459 10.585-5.69.078-11.387.14-17.074-.018-6.778-.19-11.75 5.44-11.784 11.82 0 .484.083.984-.013 1.451-.488 2.343 1.462 6.13-1.022 6.826-3.78 1.062-8.206 1.062-11.54-2.311-1.13-1.14-2.082-2.417-2.584-3.893-2.679-7.865-3.102-15.83-.58-23.818 1.572-4.986 5.848-8.087 11.145-8.176 3.874-.065 7.749-.013 11.623-.013l.002-.014zm6.902-11.12c-.162-1.903-1.185-3.292-3.296-3.35-2.309-.06-3.502 1.336-3.505 3.608-.002 2.106 1.145 3.455 3.241 3.516 2.303.067 3.418-1.36 3.56-3.774z"/><path fill="#ffcf46" d="M80.824 61.572c-4.24 0-8.482-.037-12.722.03-.955.012-2.557-.592-2.607 1.041-.056 1.852 1.663 1.37 2.755 1.381 4.24.053 8.484.098 12.723-.02 2.178-.06 3.067.357 3.23 2.925.737 11.625-4.308 12.63-13.613 14.745-5.338 1.213-11.061.57-16.325-1.788-4.353-1.947-7.024-4.753-6.687-10.007.334-5.186.39-10.439-.009-15.62-.48-6.253 3.41-10.852 10.975-10.854 5.09-.001 10.214-.389 15.26.075 7.215.662 12.872-5.592 13.12-12.864.01-.241-.052-.5.01-.724.636-2.235-1.626-5.557 1.4-6.686 4.573-1.705 9.73.087 12.066 3.557 2.945 4.369 3.343 9.51 3.819 14.53.515 5.411-1.003 10.505-3.276 15.386-1.544 3.31-4.14 4.91-7.757 4.915-4.12.003-8.239 0-12.36 0-.002-.008-.002-.015-.002-.022zm-1.104 10.8c-.453-2.066-1.385-3.476-3.785-3.535-2.496-.06-3.14 1.807-3.127 3.474.014 1.772.508 3.952 3.21 3.748 2.246-.172 3.341-1.563 3.702-3.687z"/><path fill="#386f9f" d="M14.129 114.849c0 2.582.117 5-.055 7.397-.074 1.034 1.066 2.98-1.103 2.978-1.912 0-2.403-1.522-2.342-3.361.117-3.51.034-7.027.034-10.54v-7.998c0-4.82 1.293-6.452 5.903-7.45 4.286-.932 7.654.511 9.386 4.263 1.732 3.753 1.866 7.62.133 11.438-1.708 3.762-4.854 5.166-8.884 4.051-.918-.25-1.845-.467-3.072-.778zm0-9.448c0 1.33.18 2.686-.037 3.98-.502 2.991 1.408 3.728 3.66 4.26 2.227.526 3.754-.421 4.647-2.383 1.501-3.29 1.753-6.683.613-10.162-1.012-3.092-3.349-3.454-6.077-3.07-2.694.383-3.059 2.215-2.824 4.48.1.955.018 1.93.018 2.895zM43.116 114.689c-1.845.48-3.447.992-5.087 1.3-3.59.671-6.248-1.3-7.183-4.894-1.16-4.448-.178-8.879-.148-13.317.013-2.023 1.885-1.234 3.18-2.318 0 4.75.018 8.85-.006 12.947-.013 2.058.519 3.75 2.465 4.835 2.148 1.198 3.91.057 5.78-.712 1.34-.551 1.173-1.676 1.175-2.746.01-3.872-.001-7.74.012-11.612.002-.955-.097-2.122 1.313-2.075 1.257.041 1.804.788 1.783 2.158-.091 6.407.09 12.823-.17 19.221-.197 4.838-3.61 7.793-8.52 8.01-.735.031-1.505.099-1.78-.813-.419-1.404.718-1.139 1.465-1.378 5.401-1.718 6.107-2.744 5.721-8.606zM65.94 98.064c1.429-.675 2.25-1.293 3.153-1.46 5.067-.937 8.95-.58 8.94 6.245-.007 3.515.002 7.031-.007 10.545-.002.984.061 1.942-1.406 2.027-1.547.092-1.887-.793-1.88-2.006.018-3.387.11-6.774.107-10.16-.002-2.63-.539-4.958-3.884-4.95-2.934.005-5.012 2.195-5.027 5.217a899.58 899.58 0 00.003 9.814c.003 1.162.028 2.181-1.652 2.085-1.513-.09-1.327-1.11-1.327-2.049-.01-8.6.032-17.209-.041-25.815-.013-1.508.582-2.444 1.92-2.508 1.888-.087 1.023 1.564 1.051 2.392.123 3.371.05 6.75.05 10.623zM81.93 105.775c-.191-6.715 2.994-10.3 8.76-10.092 2.894.106 5.065 1.39 6.466 3.89 2.475 4.422 2.14 8.846-.538 12.987-1.84 2.844-4.67 4.185-8.12 3.453-3.402-.72-6.066-3.783-6.548-7.353-.128-.945-.02-1.924-.02-2.885zm13.32.157c-.152-1.172-.125-2.806-.613-4.264-.667-2-1.883-3.61-4.364-3.72-2.503-.108-3.752 1.355-4.587 3.38-1.311 3.179-1.226 6.371.194 9.493.912 2.011 2.32 3.483 4.76 3.075 2.403-.401 3.821-1.976 4.312-4.313.223-1.059.187-2.168.298-3.65zM102.257 106.827c0-1.212-.023-2.422.004-3.628.056-2.325-.685-4.901 2.45-6.089 3.59-1.356 7.148-2.372 10.762-.273 1.352.786 1.85 2.214 1.864 3.73.037 4.231-.019 8.464.038 12.695.02 1.476-.368 2.214-2.027 2.174-1.818-.043-1.435-1.283-1.423-2.273.043-3.38.278-6.757.214-10.132-.084-4.25-2.416-5.983-6.389-4.94-1.648.434-2.678 1.234-2.597 3.274.161 3.982.037 7.978.052 11.967.004 1.156.021 2.18-1.647 2.083-1.528-.088-1.278-1.145-1.29-2.062-.028-2.176-.008-4.353-.011-6.526zM58.689 97.403c-.25.296-.46.76-.68.764-3.964.055-2.864 3.014-2.966 5.209-.097 2.045 0 4.1-.029 6.151-.03 2.038.147 3.932 2.627 4.473.711.154 1.035.564.887 1.274-.163.784-.788.753-1.407.745-2.85-.05-4.963-2.065-5.047-5.015-.086-3.014.031-6.035-.04-9.046-.037-1.43.706-3.255-1.6-3.822-.253-.061-.343-.778-.508-1.187 3.076-.965 1.8-3.618 2.222-5.631.2-.953 1.105-1.214 1.96-1.295.865-.082.872.618.9 1.203.114 2.32-1.087 5.425 3.184 5.256.143-.005.31.562.497.92z"/></g></svg>
                         </span>
@@ -100,34 +77,34 @@
                         </span>
                         
                     </div>
-                    <div class="flex justify-between ml-8 font-base mt-8">
-                       <div>
-                        <p class="text-white mb-2 uppercase">tools i work with</p>
-                        <h3 class="mt-2 text-white text-3xl">My Stack</h3>
-                       </div>
-                       <div class="flex items-center mr-4">
-                            <svg aria-hidden="true" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg aria-hidden="true" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg aria-hidden="true" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg aria-hidden="true" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            <svg aria-hidden="true" class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    <div class="pb-4 lg:pb-0 flex justify-between ml-8 font-base mt-8">
+                       
+                        <p class="text-white uppercase lg:text-3xl lg:mt-8">tools i work with</p>
+                        <!-- <h3 class=" mt-2 text-white text-3xl">My Stack</h3> -->
+                      
+                       <div class="flex items-center mr-4 lg:mt-8">
+                            <svg aria-hidden="true" class="w-5 h-5 lg:w-10 lg:h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>First star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 lg:w-10 lg:h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Second star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 lg:w-10 lg:h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Third star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 lg:w-10 lg:h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fourth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg aria-hidden="true" class="w-5 h-5 lg:w-10 lg:h-10 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Fifth star</title><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                         </div>
                     </div>
                 </div>
                 
             </div>
 
-            <div id="resume" class="mt-6 flex justify-between gap-6">
-                <div class="bg-[#14171a] pb-4 w-1/3 rounded-2xl">
-                    <div class="mt-24 -ml-40 h-20">
+            <div id="resume" class="mt-6 mx-4 lg:mx-0 grid grid-cols-1 gap-y-4 lg:flex lg:justify-between lg:gap-6">
+                <div class="bg-[#14171a] pb-4 lg:w-1/3 rounded-md">
+                    <div class="mt-24 lg:-ml-40 h-20">
                         <svg class="hover:animate-wiggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" color="var(--token-a82bfb8f-9ba2-4e44-ae8b-069ee277407a, rgb(255, 102, 158)) /* {&quot;name&quot;:&quot;pink&quot;} */" style="user-select: none; width: 100%; height: 100%; display: inline-block; fill: var(--token-a82bfb8f-9ba2-4e44-ae8b-069ee277407a, rgb(255, 102, 158)); flex-shrink: 0; cursor: pointer;"><g color="var(--token-a82bfb8f-9ba2-4e44-ae8b-069ee277407a, rgb(255, 102, 158)) /* {&quot;name&quot;:&quot;pink&quot;} */" weight="fill"><path d="M144,216H112a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16Z"></path><path d="M219.6,143.9l-30.2-36.3a125.4,125.4,0,0,0-8-34.9c-11.6-30.2-32.1-50-43.4-59.1a15.9,15.9,0,0,0-20-.1c-11.4,9.1-32.2,28.9-43.9,59.1A121.5,121.5,0,0,0,66,108.3L36.4,143.9A16.1,16.1,0,0,0,33,157.6l12.4,55.6a15.9,15.9,0,0,0,10.3,11.6,17,17,0,0,0,5.4.9,16,16,0,0,0,9.9-3.5L98.8,200h58.4L185,222.2a16,16,0,0,0,9.9,3.5,17,17,0,0,0,5.4-.9,15.9,15.9,0,0,0,10.3-11.6L223,157.6A16.1,16.1,0,0,0,219.6,143.9ZM61,209.7,48.7,154.1l17.9-21.5q3.5,28.1,19.1,57.4ZM128,108a12,12,0,1,1,12-12A12,12,0,0,1,128,108Zm67,101.7-24.8-19.8c10.4-19.7,16.6-39,18.8-57.8l18.3,22Z"></path></g></svg>
                     </div>
                     <div class="flex mt-4 ml-8">
                         <div>
                             <p class="text-[#8c8c8c] mb-2 uppercase">learn more about me</p>
-                            <h1 class="inline-flex font-base text-white font-bold text-2xl">See my <br> resume
-                            <a target="_blank" href="https://docs.google.com/document/d/1mwqVj9RJ4n8hgA5wondLVzPwPyWaE-yyiIZlvhbZx5k/edit?usp=sharing" class="ml-32 cursor-pointer mt-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:animate-wiggle text-[#e0dfdc] hover:text-[#ff669e] w-10 h-10">
+                            <h1 class="inline-flex font-base text-white font-bold text-2xl">See my resume
+                            <a target="_blank" href="https://docs.google.com/document/d/1mwqVj9RJ4n8hgA5wondLVzPwPyWaE-yyiIZlvhbZx5k/edit?usp=sharing" class="ml-12 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:animate-wiggle text-[#e0dfdc] hover:text-[#ff669e] w-8 h-8">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </a>
@@ -135,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-[#14171a] w-3/4 rounded-2xl">
+                <div class="bg-[#14171a] lg:w-3/4 rounded-md lg:pb-0 pb-8">
                     <div class="flex mt-12 ml-8">
                         <div>
                             <h1 class="font-base text-[#8c8c8c] font-bold text-3xl mr-4"> <span class="text-[#fcfaf4]">A software enginner</span>, with a knack for perfection.</h1>
@@ -148,28 +125,27 @@
                         </div>
                     </div>
                 </div>
-                <div class=" rounded-2xl">
-                    <img class="rounded-2xl h-80 w-96 object-cover transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" src="../assets/WhatsApp Image 2023-05-16 at 15.07.39.jpeg" alt="">
+                <div class="hidden lg:block rounded-md">
+                    <img class="rounded-md h-80 w-96 object-cover transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0" src="../assets/WhatsApp Image 2023-05-16 at 15.07.39.jpeg" alt="">
                 </div> 
             </div>
             
-            <div id="projects" class="mt-20 pb-20">
+            <div id="projects" class="mt-20 lg:pb-20 mx-4 lg:mx-0">
                 <div class="flex justify-between ml-2 mr-2">
-                    <h3 class="mt-4 text-[#fcf4fa] text-2xl font-bold font-base">My Projects</h3>
-                    <a @click="goToProjects" class="hover:animate-headShake mt-4 text-[#ff669e] cursor-pointer text-2xl font-bold font-base">See all my projects</a>
+                    <h3 class="mt-4 text-[#fcf4fa] lg:text-2xl font-bold font-base">My Projects</h3>
+                    <a @click="goToProjects" class="hover:animate-headShake mt-4 text-[#ff669e] cursor-pointer lg:text-2xl font-bold font-base">See all my projects</a>
                 </div>
             
-            <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-16">
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-16">
                 
                 <div v-for="project of projects" >
                     <a target="_blank" :href="project.code_link" class="relative block cursor-pointer group">
-                        <img class="absolute inset-0 object-cover rounded-3xl group-hover:opacity-50"
+                        <img class="lg:absolute lg:inset-0 object-cover rounded-md lg:group-hover:opacity-50"
                         :src="project.image" alt="" />
-                        <div class="relative p-2">
+                        <div class="hidden lg:block lg:relative lg:p-2">
                         <div class="mt-40">
-                            <div
-                            class="transition-all duration-700 transform translate-y-16 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                            <div class="p-2 bg-[#14171a]/20 w-full">
+                            <div class="transition-all duration-700 transform translate-y-16 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
+                            <div class="p-2 bg-[#14171a]/20 rounded-lg w-full">
                                 <p class="font-base mt-12 text-[#fcfaf4] uppercase text-sm">
                                     {{ project.description }}
                                 </p>
@@ -190,12 +166,12 @@
             </div>
             </div>
 
-            <div id="contact" class="mt-10 flex justify-between gap-6">
-                <div class="bg-[#14171a] pb-4 w-1/2 rounded-2xl">
+            <div id="contact" class="mt-20 mx-4 lg:mx-0 grid grid-cols-1 lg:flex lg:justify-between gap-6">
+                <div class="bg-[#14171a] pb-4 lg:w-1/2 rounded-md">
                     
                     <div class="flex mt-4 ml-8">
                         <div>
-                            <p class="text-[#8c8c8c] mb-2 mr-2 text-sm">
+                            <p class="text-[#8c8c8c] font-base mb-2 mr-2 text-sm">
                                 Nick's well respected for his technical skills. He has demonstrated good in-depth knowledge of Django. It’s also noted that Nick makes an effort to consider the architecture and performance of his code.  Colleagues state they like "the fact that Nick always tries to find the simplest solution to the problem". 
                                 Team members like his enthusiastic and positive attitude on team calls and in meetings. He has done some nice presentations and he gets good results in communicating when he puts the effort in.  
                             </p>
@@ -210,47 +186,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-[#14171a] w-3/4 rounded-2xl">
-                    <div class="flex mt-12 ml-8">
-                        <div>
+                <div class="bg-[#14171a] lg:w-3/4 pb-4 lg:pb-0 rounded-md">
+                    <div class="mt-12 ml-8">
+                        
                             <h1 class="font-base inline-flex gap-3 text-[#fcf4fa] font-bold text-3xl mr-4">Let's create magic
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-yellow-500 w-8 h-8 mt-1">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                                 </svg>
                             </h1>
-                            <p class="font-base mt-6 text-xl text-[#878787] mr-4">
+                            <p class="font-base mt-6 text-sm lg:text-xl text-[#878787] mr-4">
                                My inbox is always open. You have a question, feedback or think I might be a good fit for your
                                team/project? Hit me up, I'd love to hear from you!
                             </p>
-                            <h1 @click="goToContact" class="hover:animate-headShake mt-4 cursor-pointer font-base inline-flex gap-96 text-[#ff669e] font-bold text-4xl mr-4">
+                            <h1 @click="goToContact" class="hover:animate-headShake mt-4 cursor-pointer font-base inline-flex lg:gap-96 text-[#ff669e] font-bold text-4xl mr-4">
                                 Get in touch now
-                                <span class="mt-1">
+                                <span class="mt-1 invisible lg:visible">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="animate-wiggle text-[#ff669e] w-10 h-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             </span>
                             </h1>
-                        </div>
+                        
                     </div>
                 </div>
                 
             </div>
 
-            <div id="articles" class="mt-10 bg-[#14171a] pb-6 rounded-2xl">
-                <div class="flex justify-between ml-8 mr-8">
-                    <h3 class="mt-4 text-[#fcf4fa] text-2xl font-bold font-base">My Articles</h3>
-                    <a target="_blank" href="https://dev.to/nick_langat" class="hover:animate-headShake mt-4 text-[#ff669e] text-2xl font-bold font-base">See all my articles</a>
+            <div id="articles" class="mt-20 bg-[#14171a] pb-6 rounded-md mx-4 lg:mx-0">
+                <div class="flex justify-between ml-4 mr-8">
+                    <h3 class="mt-4 text-[#fcf4fa] lg:text-2xl font-bold font-base">My Articles</h3>
+                    <a target="_blank" href="https://dev.to/nick_langat" class="hover:animate-headShake mt-4 text-[#ff669e] lg:text-2xl font-bold font-base">See all my articles</a>
                 </div>
-                <div class="grid grid-cols-2 ml-8 mt-4 gap-x-6 gap-y-6 mr-8">
-                    <div v-for="article of articles" class="bg-[#090a0c] h-48 rounded-2xl flex gap-6">
-                        <img class="h-32 w-64 mt-8 ml-6 rounded-2xl" :src="article.cover_image" alt="">
-                        <div class="mt-8">
-                            <h3 class="text-[#fcf4fa] mr-4">{{ article.title.slice(0, 60) }}...</h3>
-                            <a target="_blank" :href="article.canonical_url">
-                                <button class="mt-8 flex gap-36 text-[#878787] bg-[#14171a] cursor-pointer h-12 rounded-full px-6  hover:text-white py-1">
-                                <svg class="h-10 w-10" xmlns="http://www.w3.org/2000/svg" aria-label="dev.to" role="img" viewBox="0 0 512 512" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%"></rect><path fill="#ffffff" d="M140.47 203.94h-17.44v104.47h17.45c10.155-.545 17.358-8.669 17.47-17.41v-69.65c-.696-10.364-7.796-17.272-17.48-17.41zm45.73 87.25c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28zm100.68-88.66H233.6v38.42h32.57v29.57H233.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58z"></path></g></svg>
+                <div class="grid grid-cols-1 lg:grid-cols-2 ml-4 mt-4 gap-x-6 gap-y-6 mr-8">
+                    <div v-for="article of articles" class="bg-[#090a0c] lg:h-48 pb-4 rounded-md flex flex-col  lg:flex-row gap-6">
+                        <img class="h-32 w-64 mt-8 ml-6 rounded-md" :src="article.cover_image" alt="">
+                        <div class="lg:mt-8 ml-6 lg:ml-0">
+                            <h3 class="text-[#fcf4fa] lg:mt-0 mr-4">{{ article.title.slice(0, 60) }}...</h3>
+                            <a class="" target="_blank" :href="article.canonical_url">
+                                <button class="mt-4 lg:mt-8 flex gap-36 text-[#878787] bg-[#14171a] cursor-pointer rounded-md px-6  hover:text-white py-0.5 lg:py-1">
+                                <svg class="h-8 w-8 lg:h-10 lg:w-10" xmlns="http://www.w3.org/2000/svg" aria-label="dev.to" role="img" viewBox="0 0 512 512" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><rect width="512" height="512" rx="15%"></rect><path fill="#ffffff" d="M140.47 203.94h-17.44v104.47h17.45c10.155-.545 17.358-8.669 17.47-17.41v-69.65c-.696-10.364-7.796-17.272-17.48-17.41zm45.73 87.25c0 18.81-11.61 47.31-48.36 47.25h-46.4V172.98h47.38c35.44 0 47.36 28.46 47.37 47.28zm100.68-88.66H233.6v38.42h32.57v29.57H233.6v38.41h53.29v29.57h-62.18c-11.16.29-20.44-8.53-20.72-19.69V193.7c-.27-11.15 8.56-20.41 19.71-20.69h63.19zm103.64 115.29c-13.2 30.75-36.85 24.63-47.44 0l-38.53-144.8h32.57l29.71 113.72 29.57-113.72h32.58z"></path></g></svg>
                                 <span class="cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:animate-wiggle text-[#ff669e] w-10 h-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:animate-wiggle text-[#ff669e] h-8 w-8 lg:h-10 lg:w-10">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             </span>
@@ -261,74 +237,30 @@
                 </div> 
             </div>
 
-            <div class="container mt-10 flex font-base justify-between w-1/2 mx-auto py-3">
-                <h3 class="ml-8 name cursor-pointer hover:text-white text-2xl font-bold">Nick</h3>
-                <ul class="mx-auto flex gap-6 text-[#878787]">
-
-                    <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#resume">Resume</a>
-                </li>
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#projects">Projects</a>
-                </li>
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#contact">Contact</a>
-                </li>
-                <li class="mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
-                    <a href="#articles">Blog</a>
-                </li>
-
-                </ul>
-                <button @click="goToContact" class="mr-8 transition-opacity duration-300 ease-in hover:opacity-70 contact-btn cursor-pointer px-4 rounded-full text-white py-1">
-                    Let's talk
-                </button>
-            </div>
-            <div class="container mt-4 flex font-base justify-between w-1/2 mx-auto py-2">
-                
-                <ul class="mx-auto flex gap-6 text-[#878787]">
-
-                    <li class="mt-1 cursor-pointer hover:text-white">
-                        <svg  class="w-10 h-10" fill="#000000" viewBox="-192 -192 2304.00 2304.00" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-192" y="-192" width="2304.00" height="2304.00" rx="230.4" fill="#878787" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M0 1694.235h1920V226H0v1468.235ZM112.941 376.664V338.94H1807.06v37.723L960 1111.233l-847.059-734.57ZM1807.06 526.198v950.513l-351.134-438.89-88.32 70.475 378.353 472.998H174.042l378.353-472.998-88.32-70.475-351.134 438.89V526.198L960 1260.768l847.059-734.57Z" fill-rule="evenodd"></path> </g></svg>
-                        </li>
-                    <li class="mt-1 cursor-pointer hover:text-white">
-                        <svg class="w-10 h-10" fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="61.44" fill="#878787" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd125aef"> <path style="display: inline; fill-rule: evenodd; clip-rule: evenodd;" d="M116.504,500.219V170.654H6.975v329.564H116.504 L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941 C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219 c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533 c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531 c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z"> </path> </g> </g></svg>
-                         </li>
-                         <li class="mt-1 cursor-pointer hover:text-white">
-                            <svg class="w-10 h-10" viewBox="-2 -2 24.00 24.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-2" y="-2" width="24.00" height="24.00" rx="2.4" fill="#878787" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
-                             </li>
-                        <li class="mt-1 cursor-pointer hover:text-white">
-                            <svg class="w-10 h-10" fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-51.2" y="-51.2" width="614.40" height="614.40" rx="61.44" fill="#878787" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd12f847"> <path style="display: inline;" d="M459.186,151.787c0.203,4.501,0.305,9.023,0.305,13.565 c0,138.542-105.461,298.285-298.274,298.285c-59.209,0-114.322-17.357-160.716-47.104c8.212,0.973,16.546,1.47,25.012,1.47 c49.121,0,94.318-16.759,130.209-44.884c-45.887-0.841-84.596-31.154-97.938-72.804c6.408,1.227,12.968,1.886,19.73,1.886 c9.55,0,18.816-1.287,27.617-3.68c-47.955-9.633-84.1-52.001-84.1-102.795c0-0.446,0-0.882,0.011-1.318 c14.133,7.847,30.294,12.562,47.488,13.109c-28.134-18.796-46.637-50.885-46.637-87.262c0-19.212,5.16-37.218,14.193-52.7 c51.707,63.426,128.941,105.156,216.072,109.536c-1.784-7.675-2.718-15.674-2.718-23.896c0-57.891,46.941-104.832,104.832-104.832 c30.173,0,57.404,12.734,76.525,33.102c23.887-4.694,46.313-13.423,66.569-25.438c-7.827,24.485-24.434,45.025-46.089,58.002 c21.209-2.535,41.426-8.171,60.222-16.505C497.448,118.542,479.666,137.004,459.186,151.787z"> </path> </g> </g></svg>
-                        </li>
-                        <li class="mt-1 cursor-pointer hover:text-white">
-                            <svg class="w-10 h-10" viewBox="-2 -2 24.00 24.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-2" y="-2" width="24.00" height="24.00" rx="2.4" fill="#878787" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>instagram [#167]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)" fill="#000000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792" id="instagram-[#167]"> </path> </g> </g> </g> </g></svg>
-                        </li>
-
-                </ul>
-               
-            </div>
-            <div class="container mt-2 flex font-base justify-center items-center mx-auto">
-               <h3 class="text-[#fcf4fa]">Baked & maintained by Nick Langat &copy;2023</h3>
-            </div>
-
             
-
-
-
-
-
+            <Footer />
         </div>
     </div>
 </template>
 
 
 <script>
+import Footer from '@/components/Footer.vue';
+import Navigation from '@/components/Navigation.vue';
+
 import { mapActions } from 'vuex';
+Footer
 export default {
      name: 'About',
+     components:{
+        Footer,
+        Navigation
+     },
    data() {
        return {
            projects: [],
-           articles: []
+           articles: [],
+           isOpen: false,
        }
    },
    methods: {
@@ -373,7 +305,8 @@ export default {
 .contact-btn {
     background: linear-gradient(109deg, rgb(132, 43, 247) 0%, rgb(215, 9, 157) 100%) rgba(0, 0, 0, 0);
 }
-html{
+html, body{
+    overflow-x: hidden;
     background-color: black;
 }
 </style>

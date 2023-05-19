@@ -5,6 +5,9 @@ import store from './store'
 import './index.css'
 
 Vue.config.productionTip = false
+import moment from 'moment'
+
+Vue.prototype.moment = moment
 
 new Vue({
   router,
