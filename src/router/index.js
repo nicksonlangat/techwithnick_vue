@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('../views/AboutView.vue')
+    component: () => import('../views/Main.vue')
   },
   {
     path: '/experience',
@@ -40,6 +40,7 @@ const routes = [
     name: 'notifications',
     component: () => import('../views/Notifications.vue')
   },
+  
   {
     path: '/messages',
     name: 'messages',

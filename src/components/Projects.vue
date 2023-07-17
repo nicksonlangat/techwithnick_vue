@@ -51,3 +51,10 @@ export default {
    }
    }
 </script>
+
+<style>
+html, body{
+    overflow-x: hidden;
+    background-color: black;
+}
+</style>

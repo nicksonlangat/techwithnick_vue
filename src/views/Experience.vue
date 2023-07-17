@@ -85,6 +85,12 @@
                          I am involved in the recruitment of new engineers where I interview their technical skills and give feedback used in hiring decisions.
                          This equips me with people management skills and prepares me for what the future holds for me higher up the ladder.
                       </p>
+                      <p class="mb-4 text-base inline-flex gap-2 font-normal font-base text-[#fcfaf4] lg:mr-48">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 text-[#878787] h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                         </svg>
+                         I have reduced multiple API calls to the backend by refactoring existing endpoints to allow bulk creates and bulk updates in DRF. 
+                      </p>
                    </li>
                    <li class="mb-10 ml-6">
                       <span class="absolute flex items-center justify-center w-6 h-6 contact-btn rounded-full -left-3">

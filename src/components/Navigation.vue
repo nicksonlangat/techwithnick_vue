@@ -13,6 +13,7 @@
                 <li class="lg:mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
                    <a target="_blank" href="https://docs.google.com/document/d/1mwqVj9RJ4n8hgA5wondLVzPwPyWaE-yyiIZlvhbZx5k/edit?usp=sharing" >Resume</a>
                 </li>
+               
                 <li class="hidden lg:mt-1 cursor-pointer hover:text-white transition-all duration-300 ">
                    <a href="/messages" >Messages</a>
                 </li>

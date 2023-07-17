@@ -64,7 +64,7 @@ import Footer from '@/components/Footer.vue';
 import { mapActions } from 'vuex';
 Footer
 export default {
-     name: 'About',
+     name: 'Main',
      components:{
         Footer
      },

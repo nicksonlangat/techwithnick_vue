@@ -33,6 +33,9 @@
                 <a href="#contact" class="lg:mt-8 lg:border lg:border-white lg:rounded-full px-8 py-2 text-white hover:bg-white hover:text-[#0F172A] duration-300 transition-colors">
                     Contact
                 </a>
+                <a href="#contact" class="lg:mt-8 lg:border lg:border-white lg:rounded-full px-8 py-2 text-white hover:bg-white hover:text-[#0F172A] duration-300 transition-colors">
+                    Templates
+                </a>
             </div>
 
             

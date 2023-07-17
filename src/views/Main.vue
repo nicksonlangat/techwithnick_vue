@@ -136,32 +136,25 @@
                     <a @click="goToProjects" class="hover:animate-headShake mt-4 text-[#ff669e] cursor-pointer lg:text-2xl font-bold font-base">See all my projects</a>
                 </div>
             
-            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-16">
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 lg:gap-x-6 gap-y-16">
                 
-                <div v-for="project of projects" >
-                    <a target="_blank" :href="project.code_link" class="relative block cursor-pointer group">
-                        <img class="lg:absolute lg:inset-0 object-cover rounded-md lg:group-hover:opacity-50"
-                        :src="project.image" alt="" />
-                        <div class="hidden lg:block lg:relative lg:p-2">
-                        <div class="mt-40">
-                            <div class="transition-all duration-700 transform translate-y-16 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                            <div class="p-2 bg-[#14171a]/20 rounded-lg w-full">
-                                <p class="font-base mt-12 text-[#fcfaf4] uppercase text-sm">
-                                    {{ project.description }}
-                                </p>
-                                <div class="flex justify-between mt-4 pb-4">
-                                  <h2 class="font-base font-bold text-[#fcfaf4] text-3xl">{{ project.name}}</h2> 
-                                  <span class="cursor-pointer">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:animate-wiggle text-[#ff669e] w-10 h-10">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            </span>
-                                </div>
-                            </div>
-                            </div>
+                <div v-for="project of projects" class="flex flex-col text-white  pb-5 rounded-md">
+                      <img class="object-cover rounded-t-md"
+                         :src="project.image" alt="" />
+                        
+                     <div class="mt-3">
+                        
+                          <div class="flex justify-between">
+                           <h3 class="text-white font-extrabold  text-lg">{{ project.name }}</h3>
+                           <h3 class="text-[#878787] font-extrabold mr-2 text-sm">{{ project.type }}</h3>
+                          </div>
+                        <div class="flex mt-3 text-sm justify-between">
+                           <a target="_blank" :href="project.live_link" class="bg-[#14171a] rounded-md px-6 py-2">Preview</a>
+                           <a target="_blank" :href="project.code_link" class="bg-[#14171a] rounded-md px-6 py-1.5">Code</a>
                         </div>
-                        </div>
-                    </a>
+                     </div>
+                      
+                 
                 </div>
             </div>
             </div>
@@ -271,7 +264,7 @@ export default {
        getProjects() {
            this.fetchCloneProjects({
                cb: (res=>{
-                   this.projects = res
+                   this.projects = res.slice(-6)
                })
            })
        },

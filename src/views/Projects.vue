@@ -3,32 +3,24 @@
        <Navigation/>
        <div class="container mx-auto mt-40 lg:mt-36 pb-4">
           <div id="projects" class="mt-20 pb-20">
-             <div class="mx-4 lg:mx-0 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-10">
-                <div v-for="project of projects" >
-                   <a target="_blank" :href="project.code_link" class="relative block cursor-pointer group">
-                      <img class="lg:absolute lg:inset-0 object-cover rounded-md lg:group-hover:opacity-50"
+             <div class="mx-4 lg:mx-0 mt-8 grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-5">
+                <div v-for="project of projects" class="flex flex-col text-white  pb-5 rounded-md">
+                      <img class="object-cover rounded-t-md"
                          :src="project.image" alt="" />
-                      <div class="hidden lg:block lg:relative lg:p-2">
-                         <div class="mt-40">
-                            <div
-                               class="transition-all duration-700 transform translate-y-16 opacity-0 group-hover:opacity-100 group-hover:translate-y-0">
-                               <div class="-mt-12 p-2  bg-[#14171a]/10 w-full">
-                                  <p class="font-base text-[#fcfaf4] uppercase text-sm">
-                                     {{ project.description }}
-                                  </p>
-                                  <div class="flex mt-2 justify-between">
-                                     <h2 class="font-base font-bold text-[#fcfaf4] text-xl">{{ project.name}}</h2>
-                                     <span class="cursor-pointer">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hover:animate-wiggle text-[#ff669e] w-8 h-8">
-                                           <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                     </span>
-                                  </div>
-                               </div>
-                            </div>
-                         </div>
-                      </div>
-                   </a>
+                        
+                     <div class="mt-3">
+                        
+                          <div class="flex justify-between">
+                           <h3 class="text-white font-extrabold  text-lg">{{ project.name }}</h3>
+                           <h3 class="text-[#878787] font-extrabold mr-2 text-sm">{{ project.type }}</h3>
+                          </div>
+                        <div class="flex mt-3 text-sm justify-between">
+                           <a target="_blank" :href="project.live_link" class="bg-[#14171a] rounded-md px-6 py-2">Preview</a>
+                           <a target="_blank" :href="project.code_link" class="bg-[#14171a] rounded-md px-6 py-1.5">Code</a>
+                        </div>
+                     </div>
+                      
+                 
                 </div>
              </div>
           </div>
